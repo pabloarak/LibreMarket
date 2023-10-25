@@ -2,6 +2,8 @@ package com.libre.market.persistence.entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "categories")
 public class Category {
@@ -10,6 +12,8 @@ public class Category {
     private Integer id;
     private String description;
     private Boolean state;
+    @OneToMany(mappedBy = "category")
+    private List<Product> products;
 
     public String getDescription() {
         return description;

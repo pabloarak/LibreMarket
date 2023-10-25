@@ -2,7 +2,10 @@ package com.libre.market.persistence.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+
+import java.util.List;
 
 @Entity
 @Table(name="clients")
@@ -12,6 +15,16 @@ public class Client {
     private String name;
     private String lastname;
     private Long phone;
+    @OneToMany(mappedBy = "payment")
+    private List<Payment> payments;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;

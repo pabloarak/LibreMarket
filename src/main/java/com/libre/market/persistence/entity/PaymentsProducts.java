@@ -1,8 +1,6 @@
 package com.libre.market.persistence.entity;
 
-import jakarta.persistence.EmbeddedId;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = 'payments_products')
@@ -11,6 +9,13 @@ public class PaymentsProducts {
     private PaymentsProductsPK id;
     private Integer quantity;
     private Double total;
+    private Boolean state;
+    @ManyToOne
+    @JoinColumn(name = "payment_id", insertable = false, updatable = false)
+    private Payment payment;
+    @ManyToOne
+    @JoinColumn(name = "product_id", insertable = false, updatable = false)
+    private Product product;
 
     public PaymentsProductsPK getId() {
         return id;
@@ -43,6 +48,4 @@ public class PaymentsProducts {
     public void setState(Boolean state) {
         this.state = state;
     }
-
-    private Boolean state;
 }

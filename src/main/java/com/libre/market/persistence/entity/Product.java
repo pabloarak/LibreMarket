@@ -2,6 +2,8 @@ package com.libre.market.persistence.entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "products")
 public class Product {
@@ -15,6 +17,9 @@ public class Product {
     private Double price;
     private Integer stock;
     private Boolean state;
+    @ManyToOne
+    @JoinColumn(name = 'category_id', insertable = false, updatable = false)
+    private Category category;
 
     public String getName() {
         return name;

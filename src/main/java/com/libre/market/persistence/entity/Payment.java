@@ -3,6 +3,7 @@ package com.libre.market.persistence.entity;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "payments")
@@ -17,6 +18,11 @@ public class Payment {
     @Column(name = "payment_method")
     private String paymentMethod;
     private String comment;
+    @ManyToOne
+    @JoinColumn(name = 'client_id', insertable = false, updatable = false)
+    private Client client;
+    @OneToMany(mappedBy = "payment")
+    private List<PaymentsProducts> products;
 
     public String getClientId() {
         return clientId;
