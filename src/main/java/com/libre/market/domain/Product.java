@@ -1,13 +1,13 @@
 package com.libre.market.domain;
 
-public class ProductDomain {
+public class Product {
     private int id;
     private String name;
     private int categoryId;
     private double price;
     private int stock;
     private boolean active;
-    private CategoryDomain category;
+    private Category category;
 
     public int getId() {
         return id;
@@ -57,11 +57,11 @@ public class ProductDomain {
         this.active = active;
     }
 
-    public CategoryDomain getCategory() {
+    public Category getCategory() {
         return category;
     }
 
-    public void setCategory(CategoryDomain category) {
+    public void setCategory(Category category) {
         this.category = category;
     }
 }

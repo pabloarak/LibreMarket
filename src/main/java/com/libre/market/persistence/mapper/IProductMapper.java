@@ -1,7 +1,7 @@
 package com.libre.market.persistence.mapper;
 
-import com.libre.market.domain.ProductDomain;
-import com.libre.market.persistence.entity.Product;
+import com.libre.market.domain.Product;
+import com.libre.market.persistence.entity.ProductEntity;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -9,8 +9,8 @@ import org.mapstruct.Mappings;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring", uses = {CategoryMapper.class})
-public interface ProductMapper {
+@Mapper(componentModel = "spring", uses = {ICategoryMapper.class})
+public interface IProductMapper {
     @Mappings({
             @Mapping(source = "id", target = "id"),
             @Mapping(source = "name", target = "name"),
@@ -20,10 +20,10 @@ public interface ProductMapper {
             @Mapping(source = "state", target = "active"),
             @Mapping(source = "category", target = "category"),
     })
-    ProductDomain toProduct(Product product);
-    List<ProductDomain> toProducts(List<Product> products);
+    Product toProduct(ProductEntity product);
+    List<Product> toProducts(List<ProductEntity> products);
 
     @InheritInverseConfiguration
     @Mapping(target = "barCode", ignore = true)
-    Product toProduct(ProductDomain product);
+    ProductEntity toProduct(Product product);
 }

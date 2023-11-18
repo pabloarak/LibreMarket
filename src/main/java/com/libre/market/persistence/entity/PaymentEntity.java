@@ -7,7 +7,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "payments")
-public class Payment {
+public class PaymentEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,9 +20,9 @@ public class Payment {
     private String comment;
     @ManyToOne
     @JoinColumn(name = 'client_id', insertable = false, updatable = false)
-    private Client client;
+    private ClientEntity client;
     @OneToMany(mappedBy = "payment")
-    private List<PaymentsProducts> products;
+    private List<PaymentsProductsEntity> products;
 
     public String getClientId() {
         return clientId;

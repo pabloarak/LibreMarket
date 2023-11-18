@@ -6,14 +6,14 @@ import java.util.List;
 
 @Entity
 @Table(name = "categories")
-public class Category {
+public class CategoryEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String description;
     private Boolean state;
     @OneToMany(mappedBy = "category")
-    private List<Product> products;
+    private List<ProductEntity> products;
 
     public String getDescription() {
         return description;

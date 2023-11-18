@@ -1,6 +1,6 @@
 package com.libre.market.domain;
 
-public class CategoryDomain {
+public class Category {
     private int id;
     private String category;
     private boolean active;

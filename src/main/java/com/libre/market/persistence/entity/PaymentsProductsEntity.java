@@ -4,24 +4,24 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = 'payments_products')
-public class PaymentsProducts {
+public class PaymentsProductsEntity {
     @EmbeddedId
-    private PaymentsProductsPK id;
+    private PaymentsProductsPKEntity id;
     private Integer quantity;
     private Double total;
     private Boolean state;
     @ManyToOne
     @JoinColumn(name = "payment_id", insertable = false, updatable = false)
-    private Payment payment;
+    private PaymentEntity payment;
     @ManyToOne
     @JoinColumn(name = "product_id", insertable = false, updatable = false)
-    private Product product;
+    private ProductEntity product;
 
-    public PaymentsProductsPK getId() {
+    public PaymentsProductsPKEntity getId() {
         return id;
     }
 
-    public void setId(PaymentsProductsPK id) {
+    public void setId(PaymentsProductsPKEntity id) {
         this.id = id;
     }
 

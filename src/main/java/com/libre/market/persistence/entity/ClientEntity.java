@@ -9,14 +9,14 @@ import java.util.List;
 
 @Entity
 @Table(name="clients")
-public class Client {
+public class ClientEntity {
     @Id
     private String id;
     private String name;
     private String lastname;
     private Long phone;
     @OneToMany(mappedBy = "payment")
-    private List<Payment> payments;
+    private List<PaymentEntity> payments;
 
     public String getId() {
         return id;

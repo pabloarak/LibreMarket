@@ -2,11 +2,9 @@ package com.libre.market.persistence.entity;
 
 import jakarta.persistence.*;
 
-import java.util.List;
-
 @Entity
 @Table(name = "products")
-public class Product {
+public class ProductEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -19,7 +17,7 @@ public class Product {
     private Boolean state;
     @ManyToOne
     @JoinColumn(name = 'category_id', insertable = false, updatable = false)
-    private Category category;
+    private CategoryEntity category;
 
     public String getName() {
         return name;
