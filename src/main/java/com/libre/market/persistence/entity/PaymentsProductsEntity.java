@@ -3,7 +3,7 @@ package com.libre.market.persistence.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = 'payments_products')
+@Table(name = "payments_products")
 public class PaymentsProductsEntity {
     @EmbeddedId
     private PaymentsProductsPKEntity id;

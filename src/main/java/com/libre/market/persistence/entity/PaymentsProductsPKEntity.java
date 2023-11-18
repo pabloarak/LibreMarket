@@ -7,9 +7,9 @@ import java.io.Serializable;
 
 @Embeddable
 public class PaymentsProductsPKEntity implements Serializable {
-    @Column(name = 'payment_id')
+    @Column(name = "payment_id")
     private Integer paymentId;
-    @Column(name = 'product_id')
+    @Column(name = "product_id")
     private Integer productId;
 
     public Integer getPaymentId() {

@@ -16,7 +16,7 @@ public class ProductEntity {
     private Integer stock;
     private Boolean state;
     @ManyToOne
-    @JoinColumn(name = 'category_id', insertable = false, updatable = false)
+    @JoinColumn(name = "category_id", insertable = false, updatable = false)
     private CategoryEntity category;
 
     public String getName() {

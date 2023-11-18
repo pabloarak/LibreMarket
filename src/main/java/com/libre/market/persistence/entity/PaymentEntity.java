@@ -19,7 +19,7 @@ public class PaymentEntity {
     private String paymentMethod;
     private String comment;
     @ManyToOne
-    @JoinColumn(name = 'client_id', insertable = false, updatable = false)
+    @JoinColumn(name = "client_id", insertable = false, updatable = false)
     private ClientEntity client;
     @OneToMany(mappedBy = "payment")
     private List<PaymentsProductsEntity> products;
