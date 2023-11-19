@@ -24,8 +24,8 @@ public class PaymentEntity {
     @JoinColumn(name = "client_id", insertable = false, updatable = false)
     private ClientEntity client;
 
-    @OneToMany(mappedBy = "payment")
-    private List<PaymentsProductsEntity> payments;
+    @OneToMany(mappedBy = "product")
+    private List<PaymentsProductsEntity> products;
 
     public Integer getId() {
         return id;
@@ -83,11 +83,11 @@ public class PaymentEntity {
         this.client = client;
     }
 
-    public List<PaymentsProductsEntity> getPayments() {
-        return payments;
+    public List<PaymentsProductsEntity> getProduct() {
+        return products;
     }
 
-    public void setPayments(List<PaymentsProductsEntity> payments) {
-        this.payments = payments;
+    public void setProducts(List<PaymentsProductsEntity> products) {
+        this.products = products;
     }
 }
