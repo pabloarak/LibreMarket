@@ -21,7 +21,7 @@ public interface IPaymentItemMapper {
     @Mappings({
             @Mapping(target = "payment", ignore = true),
             @Mapping(target = "product", ignore = true),
-            @Mapping(target = "id.payment", ignore = true)
+            @Mapping(target = "id.paymentId", ignore = true)
     })
     PaymentsProductsEntity toPaymentsProducts(PaymentItem item);
 }

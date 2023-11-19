@@ -10,7 +10,9 @@ public class PaymentsProductsEntity {
     private Integer quantity;
     private Double total;
     private Boolean state;
+
     @ManyToOne
+    @MapsId("paymentId")
     @JoinColumn(name = "payment_id", insertable = false, updatable = false)
     private PaymentEntity payment;
     @ManyToOne
@@ -47,5 +49,21 @@ public class PaymentsProductsEntity {
 
     public void setState(Boolean state) {
         this.state = state;
+    }
+
+    public PaymentEntity getPayment() {
+        return payment;
+    }
+
+    public void setPayment(PaymentEntity payment) {
+        this.payment = payment;
+    }
+
+    public ProductEntity getProduct() {
+        return product;
+    }
+
+    public void setProduct(ProductEntity product) {
+        this.product = product;
     }
 }

@@ -24,7 +24,7 @@ public class PaymentEntity {
     @JoinColumn(name = "client_id", insertable = false, updatable = false)
     private ClientEntity client;
 
-    @OneToMany(mappedBy = "product")
+    @OneToMany(mappedBy = "payment", cascade = {CascadeType.ALL})
     private List<PaymentsProductsEntity> products;
 
     public Integer getId() {
@@ -83,7 +83,7 @@ public class PaymentEntity {
         this.client = client;
     }
 
-    public List<PaymentsProductsEntity> getProduct() {
+    public List<PaymentsProductsEntity> getProducts() {
         return products;
     }
 
