@@ -8,5 +8,5 @@ import java.util.Optional;
 public interface IPaymentRepository {
     List<Payment> getAll();
     Optional<List<Payment>> getByClient(String clientId);
-    Payment save(Payment purchase);
+    Payment save(Payment payment);
 }

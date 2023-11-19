@@ -2,6 +2,7 @@ package com.libre.market.domain.service;
 
 import com.libre.market.domain.Product;
 import com.libre.market.domain.repository.IProductRepository;
+import com.libre.market.persistence.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +13,7 @@ import java.util.Optional;
 @Service
 public class ProductService {
     @Autowired
-    private IProductRepository productRepository;
+    private ProductRepository productRepository;
 
     public List<Product> getAll() {
         return productRepository.getAll();
