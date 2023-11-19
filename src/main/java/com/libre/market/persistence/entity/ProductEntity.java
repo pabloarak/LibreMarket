@@ -15,9 +15,18 @@ public class ProductEntity {
     private Double price;
     private Integer stock;
     private Boolean state;
+
     @ManyToOne
     @JoinColumn(name = "category_id", insertable = false, updatable = false)
     private CategoryEntity category;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -65,5 +74,13 @@ public class ProductEntity {
 
     public void setState(Boolean state) {
         this.state = state;
+    }
+
+    public CategoryEntity getCategory() {
+        return category;
+    }
+
+    public void setCategory(CategoryEntity category) {
+        this.category = category;
     }
 }

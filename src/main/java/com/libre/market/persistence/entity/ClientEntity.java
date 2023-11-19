@@ -15,7 +15,10 @@ public class ClientEntity {
     private String name;
     private String lastname;
     private Long phone;
-    @OneToMany(mappedBy = "payment")
+    private String address;
+    private String email;
+
+    @OneToMany(mappedBy = "client")
     private List<PaymentEntity> payments;
 
     public String getId() {
@@ -66,6 +69,11 @@ public class ClientEntity {
         this.email = email;
     }
 
-    private String address;
-    private String email;
+    public List<PaymentEntity> getPayments() {
+        return payments;
+    }
+
+    public void setPayments(List<PaymentEntity> payments) {
+        this.payments = payments;
+    }
 }

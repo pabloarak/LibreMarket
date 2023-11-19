@@ -18,11 +18,22 @@ public class PaymentEntity {
     @Column(name = "payment_method")
     private String paymentMethod;
     private String comment;
+    private String state;
+
     @ManyToOne
     @JoinColumn(name = "client_id", insertable = false, updatable = false)
     private ClientEntity client;
+
     @OneToMany(mappedBy = "payment")
-    private List<PaymentsProductsEntity> products;
+    private List<PaymentsProductsEntity> payments;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getClientId() {
         return clientId;
@@ -64,5 +75,19 @@ public class PaymentEntity {
         this.state = state;
     }
 
-    private String state;
+    public ClientEntity getClient() {
+        return client;
+    }
+
+    public void setClient(ClientEntity client) {
+        this.client = client;
+    }
+
+    public List<PaymentsProductsEntity> getPayments() {
+        return payments;
+    }
+
+    public void setPayments(List<PaymentsProductsEntity> payments) {
+        this.payments = payments;
+    }
 }

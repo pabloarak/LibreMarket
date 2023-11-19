@@ -30,11 +30,11 @@ public class ProductRepository implements IProductRepository {
         return Optional.of(mapper.toProducts(products));
     }
 
-    @Override
+/*    @Override
     public Optional<List<Product>> getScarseProducts(int quantity) {
         Optional<List<ProductEntity>> products = productCrudRepository.findByQuantityStockLessThanAndState(quantity);
         return products.map(prods -> mapper.toProducts(prods));
-    }
+    }*/
 
     @Override
     public Optional<Product> getProduct(int productId) {

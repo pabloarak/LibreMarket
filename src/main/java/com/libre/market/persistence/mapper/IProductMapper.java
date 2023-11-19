@@ -24,6 +24,6 @@ public interface IProductMapper {
     List<Product> toProducts(List<ProductEntity> products);
 
     @InheritInverseConfiguration
-    @Mapping(target = "barCode", ignore = true)
+    @Mapping(target = "code", ignore = true)
     ProductEntity toProduct(Product product);
 }

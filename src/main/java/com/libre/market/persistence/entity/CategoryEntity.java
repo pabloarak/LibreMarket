@@ -12,8 +12,17 @@ public class CategoryEntity {
     private Integer id;
     private String description;
     private Boolean state;
+
     @OneToMany(mappedBy = "category")
     private List<ProductEntity> products;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getDescription() {
         return description;
@@ -30,4 +39,13 @@ public class CategoryEntity {
     public void setState(Boolean state) {
         this.state = state;
     }
+
+    public List<ProductEntity> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<ProductEntity> products) {
+        this.products = products;
+    }
+
 }
